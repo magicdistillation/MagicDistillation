@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="MagicDistillation: Weak-to-Strong Distribution Matching Distillation for Efficient Large-Scale Portrait Video Synthesis">
+        content="MagicDistillation: Weak-to-Strong Distribution Matching Distillation for Efficient Large-Scale Video Synthesis">
   <meta name="keywords" content="Step Distillation, Video Generation, Diffusion Models">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MagicDistillation: Weak-to-Strong Distribution Matching Distillation for Efficient Large-Scale Portrait Video Synthesis</title>
+  <title>MagicDistillation: Weak-to-Strong Distribution Matching Distillation for Efficient Large-Scale Video Synthesis</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -315,11 +315,42 @@
 <section class="hero-transparent">
   <div class="column has-text-centered" style="margin-top: 14rem;">
     <h1 class="title is-1 publication-title mb-1" style="background: transparent !important; text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8); color: white;">MagicDistillation</h1>
-    <h2 class="subtitle has-text-centered mt-1" style="background: transparent !important; color: white;">Weak-to-Strong Distribution Matching Distillation for Efficient Large-Scale Portrait Video Synthesis</h2>
+    <h2 class="subtitle has-text-centered mt-1" style="background: transparent !important; color: white;">Weak-to-Strong Distribution Matching Distillation for Efficient Large-Scale Video Synthesis</h2>
     <div class="is-size-5 publication-authors" style="background: transparent !important;">
       <span class="author-block" style="background: transparent !important;">
-        <a style="background: transparent !important; color: white;">Anonymous Authors</a >
+        <a href="https://shaoshitong.github.io/" style="background: transparent !important; color: white;">Shitong Shao</a ><sup style="color: white;">1,2</sup>
       </span>
+      <span class="author-block" style="background: transparent !important;">
+        <a href="https://scholar.google.com/citations?user=ocMf7fQAAAAJ&hl=zh-CN" style="background: transparent !important; color: white;">Hongwei Yi</a ><sup style="color: white;">2</sup>
+      </span>
+      <span class="author-block" style="background: transparent !important;">
+        <a href="https://scholar.google.com/citations?user=q3x6KsgAAAAJ&hl=en" style="background: transparent !important; color: white;">Hanzhong Guo</a ><sup style="color: white;">3</sup>
+      </span>
+      <span class="author-block" style="background: transparent !important;">
+        <a href="https://owen718.github.io/" style="background: transparent !important; color: white;">Tian Ye</a ><sup style="color: white;">1,2</sup>
+      </span>
+      <span class="author-block" style="background: transparent !important;">
+        <a href="https://zhoudaquan.github.io/homepage.io/index.html" style="background: transparent !important; color: white;">Daquan Zhou</a ><sup style="color: white;">4</sup>
+      </span>
+    </div>
+    <div class="is-size-5 publication-authors" style="background: transparent !important;">
+      <span class="author-block" style="background: transparent !important;">
+        <a href="https://mlingelbach.com/" style="background: transparent !important; color: white;">Michael Lingelbach</a ><sup style="color: white;">2</sup>
+      </span>
+      <span class="author-block" style="background: transparent !important;">
+        <a href="https://scholar.google.com/citations?user=0R20iBMAAAAJ&hl=en" style="background: transparent !important; color: white;">Zhiqiang Xu</a ><sup style="color: white;">5</sup>
+      </span>
+      <span class="author-block" style="background: transparent !important;">
+        <a href="https://scholar.google.co.jp/citations?user=ysXmZCMAAAAJ&hl=en" style="background: transparent !important; color: white;">Zeke Xie</a ><sup style="color: white;">1</sup>
+      </span>
+    </div>
+
+    <div class="is-size-5 publication-authors" style="background: transparent !important;">
+      <span class="author-block" style="background: transparent !important; color: white;"><sup style="color: white;">1</sup>HKUST (GZ)</span>
+      <span class="author-block" style="background: transparent !important; color: white;"><sup style="color: white;">2</sup>Hedra Inc.</span>
+      <span class="author-block" style="background: transparent !important; color: white;"><sup style="color: white;">3</sup>HKU</span>
+      <span class="author-block" style="background: transparent !important; color: white;"><sup style="color: white;">4</sup>Peking University</span>
+      <span class="author-block" style="background: transparent !important; color: white;"><sup style="color: white;">4</sup>MBZUAI</span>
     </div>
   </div>
 </section>
@@ -332,19 +363,21 @@
       <div class="column is-four-fifths">
         <div class="content has-text-justified">
           <p>
-            Recently, open-source video diffusion models (VDMs), such as WanX and HunyuanVideo, have been scaled to over 10 billion
-            (10B+) parameters. Fine-tuning these large-scale VDMs for portrait video synthesis has shown significant improvements 
-            across several dimensions, including enhanced visual quality and more natural facial motion dynamics. However, despite
-            these advancements, large-scale VDMs currently require approximately 10 minutes to synthesize a 28-step video on a single
-            H100 GPU, which falls far short of real-time performance. Therefore, reducing the computational overhead of these models
-            is a critical challenge. To address this issue, we propose MagicDistillation, a novel framework that mitigates both the
-            memory constraints during training and the challenges of training collapse commonly observed in vanilla DMD. Specifically
-            , we first utilize LoRA to fine-tune the fake DiT, effectively resolving the out-of-memory problem. Next, we apply Weak-to-Strong
-            (W2S) distribution matching, which addresses the mismatch between the video synthesized by the few-step generator and the real data
-            distribution, a key factor leading to inaccuracies in KL divergence approximation. Furthermore, we minimize the distance between the
-            fake data distribution and the ground truth distribution to enhance the visual fidelity of the synthesized videos. Experimental 
-            results on HunyuanVideo demonstrate the effectiveness of MagicDistillation, surpassing standard Euler, LCM, and DMD baselines in
-            both FID/FVD metrics and VBench for 1/4-step portrait video synthesis.
+            Recently, open-source video diffusion models (VDMs), such as WanX and HunyuanVideo, have been scaled to
+            over 10 billion (10B+) parameters. These large-scale VDMs have demonstrated significant improvements over
+            smaller-scale VDMs across multiple dimensions, including enhanced visual quality and more natural motion 
+            dynamics. However, these models face two major limitations: (1) High inference overhead: Large-scale VDMs
+            currently require approximately 10 minutes to synthesize a 28-step video on a single H100 GPU, which is 
+            far from achieving real-time performance. (2) Limited generalization to portrait video synthesis: Models 
+            like WanX-I2V and HunyuanVideo-I2V often produce unnatural facial expressions and movements in portrait 
+            videos. To address these challenges, we propose MagicDistillation, a novel framework designed to reduce 
+            inference overhead while improving the generalization of VDMs for portrait video synthesis. Specifically, 
+            we utilize LoRA to fine-tune fake DiT based on DMD, ensuring the lightweight nature of the algorithm. 
+            Additionally, we employ Weak-to-Strong (W2S) distribution matching and minimize the distance between the 
+            fake data distribution and the ground truth distribution, thereby enhancing the visual fidelity and motion 
+            dynamics of the synthesized videos. Experimental results on portrait video synthesis validate the effectiveness 
+            of MagicDistillation, with our approach outperforming standard Euler, LCM, and DMD baselines in both FID/FVD 
+            metrics and the VBench benchmark for 1/4-step portrait video synthesis.
           </p>
         </div>
       </div>
@@ -524,43 +557,40 @@
       <div class="section-title has-text-centered">
         <h2 class="title is-3">Experimental Results (Portrait Video Synthesis)</h2>
       </div>
-
+      <h5 class="title is-5" style="color: #0000FF; font-size: 0.9em; font-weight: 300; font-style: italic;">
+        Click on the video and a prompt will appear
+    </h5>
       <div class="spacer"></div>
 
       <div class="container" style="max-width: 100%;">
-      <h3 class="title is-4">Euler (28-step)</h3> 
+      <h3 class="title is-4">Compared Method: Euler (28-step)</h3> 
       <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%; margin-bottom: 0;">
         <div class="prompt-wrap full-screen-wrap" style="position: relative;">
           <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/standard_28step/an exquisite digital artwork featuring a young anime-style female character posed against a vibrant-4.mp4"></video>
-          <div class="prompt"></div>
+          <div class="prompt">A captivating artwork of a fantasy character against a dreamy sky. The character has flowing, wavy pink hair and blue eyes, adorned in an elegant pink outfit with blue and gold accents. She appears serene amidst a backdrop of magical clouds, with streaks of purples, blues, and stars in the sky, creating a mystical and tranquil atmosphere.</div>
         </div>
         <div class="prompt-wrap full-screen-wrap" style="position: relative;">
           <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/standard_28step/an indoor setting focused on a middle-aged bald man wearing a black shirt and a brightly colored ti-4.mp4"></video>
-          <div class="prompt"></div>
+          <div class="prompt">A man sits at a desk set against a whiteboard filled with written content in a classroom, wearing a black shirt and an orange-striped tie. He is bald, with intense eyes, and his hands are clasped in front of him on papers. The room has rows of empty desks, framed pictures on the walls, and a clock above a door in the background.</div>
         </div>
       <div class="prompt-wrap full-screen-wrap" style="position: relative;">
         <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/standard_28step/an outdoor photograph of a person with curly hair-smiling at the camera-The individual appears to b-4.mp4"></video>
-        <div class="prompt"></div>
+        <div class="prompt">A young man with curly hair and a slight smile stands on a city street wearing a dark blue hoodie. He has a small black backpack and is looking at the camera. Behind him, the blurred background shows city buildings and other passersby, adding to the urban ambiance.</div>
       </div>
     </div> 
-    </div>
 
-
-    <div class="spacer"></div>
-
-    <div class="container" style="max-width: 100%;">
-      <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%; margin-bottom: 0;">
+    <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%; margin-bottom: 0; margin-top: -30px">
         <div class="prompt-wrap full-screen-wrap" style="position: relative;">
         <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/standard_28step/This image appears to be a photograph of a woman sitting against a two-tone gradient background-whic-4.mp4"></video>
-        <div class="prompt"></div>
+        <div class="prompt">A woman with long, straight, chestnut-brown hair, fair skin, and a subtle smile, wearing a dark outfit. She sits in front of a dual-toned background split vertically - one side is purple and the other side is pinkish-lavender. Her hair flows down her shoulders, and the background colors contrast with her hair and outfit, creating a visually appealing scene.</div>
         </div>
       <div class="prompt-wrap full-screen-wrap" style="position: relative;">
         <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/standard_28step/This image features a portrait of an individual with a cheerful expression-The person has long-curly-4.mp4"></video>
-        <div class="prompt"></div>
+        <div class="prompt">A woman with long, flowing auburn hair is sitting in an office. She wears a sophisticated dark blazer. The background is a dual-toned, purple and blue gradient. Her warm smile showcases fair skin and flawless makeup.</div>
       </div>
       <div class="prompt-wrap full-screen-wrap" style="position: relative;">
         <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/standard_28step/This image presents a young woman with a joyful demeanor-standing in front of a window-Her dark hair-4.mp4"></video>
-        <div class="prompt"></div>
+        <div class="prompt">A young woman with neatly styled dark hair stands by a window, smiling at the camera. She wears a blue, button-down shirt and the natural light from the window highlights her joyful expression. The window behind her displays blurred figures and greenery, creating a softly focused backdrop.</div>
       </div>
 
     </div>
@@ -569,38 +599,34 @@
     <div class="spacer"></div>
 
     <div class="container" style="max-width: 100%;">
-      <h3 class="title is-4">Euler (4-step)</h3> 
+      <h3 class="title is-4">Compared Method: Euler (4-step)</h3> 
       <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%; margin-bottom: 0;">
         <div class="prompt-wrap full-screen-wrap" style="position: relative;">
           <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/standard_4step/an exquisite digital artwork featuring a young anime-style female character posed against a vibrant-4.mp4"></video>
-          <div class="prompt"></div>
+          <div class="prompt">A captivating artwork of a fantasy character against a dreamy sky. The character has flowing, wavy pink hair and blue eyes, adorned in an elegant pink outfit with blue and gold accents. She appears serene amidst a backdrop of magical clouds, with streaks of purples, blues, and stars in the sky, creating a mystical and tranquil atmosphere.</div>
         </div>
         <div class="prompt-wrap full-screen-wrap" style="position: relative;">
           <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/standard_4step/an indoor setting focused on a middle-aged bald man wearing a black shirt and a brightly colored ti-4.mp4"></video>
-          <div class="prompt"></div>
+          <div class="prompt">A man sits at a desk set against a whiteboard filled with written content in a classroom, wearing a black shirt and an orange-striped tie. He is bald, with intense eyes, and his hands are clasped in front of him on papers. The room has rows of empty desks, framed pictures on the walls, and a clock above a door in the background.</div>
         </div>
       <div class="prompt-wrap full-screen-wrap" style="position: relative;">
         <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/standard_4step/an outdoor photograph of a person with curly hair-smiling at the camera-The individual appears to b-4.mp4"></video>
-        <div class="prompt"></div>
+        <div class="prompt">A young man with curly hair and a slight smile stands on a city street wearing a dark blue hoodie. He has a small black backpack and is looking at the camera. Behind him, the blurred background shows city buildings and other passersby, adding to the urban ambiance.</div>
       </div>
     </div> 
-    </div>
 
-    <div class="spacer"></div>
-
-    <div class="container" style="max-width: 100%;">
-      <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%; margin-bottom: 0;">
+    <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%; margin-bottom: 0; margin-top: -30px">
         <div class="prompt-wrap full-screen-wrap" style="position: relative;">
           <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/standard_4step/This image appears to be a photograph of a woman sitting against a two-tone gradient background-whic-4.mp4"></video>
-          <div class="prompt"></div>
+          <div class="prompt">A woman with long, straight, chestnut-brown hair, fair skin, and a subtle smile, wearing a dark outfit. She sits in front of a dual-toned background split vertically - one side is purple and the other side is pinkish-lavender. Her hair flows down her shoulders, and the background colors contrast with her hair and outfit, creating a visually appealing scene.</div>
         </div>
         <div class="prompt-wrap full-screen-wrap" style="position: relative;">
           <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/standard_4step/This image features a portrait of an individual with a cheerful expression-The person has long-curly-4.mp4"></video>
-          <div class="prompt"></div>
+          <div class="prompt">A woman with long, flowing auburn hair is sitting in an office. She wears a sophisticated dark blazer. The background is a dual-toned, purple and blue gradient. Her warm smile showcases fair skin and flawless makeup.</div>
         </div>
       <div class="prompt-wrap full-screen-wrap" style="position: relative;">
         <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/standard_4step/This image presents a young woman with a joyful demeanor-standing in front of a window-Her dark hair-4.mp4"></video>
-        <div class="prompt"></div>
+        <div class="prompt">A young woman with neatly styled dark hair stands by a window, smiling at the camera. She wears a blue, button-down shirt and the natural light from the window highlights her joyful expression. The window behind her displays blurred figures and greenery, creating a softly focused backdrop.</div>
       </div>
     </div> 
     </div>
@@ -608,38 +634,34 @@
     <div class="spacer"></div>
 
     <div class="container" style="max-width: 100%;">
-      <h3 class="title is-4">LCM (4-step)</h3> 
+      <h3 class="title is-4">Compared Method: LCM (4-step)</h3> 
       <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%; margin-bottom: 0;">
         <div class="prompt-wrap full-screen-wrap" style="position: relative;">
           <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/lcm_4step/an exquisite digital artwork featuring a young anime-style female character posed against a vibrant-4.mp4"></video>
-          <div class="prompt"></div>
+          <div class="prompt">A captivating artwork of a fantasy character against a dreamy sky. The character has flowing, wavy pink hair and blue eyes, adorned in an elegant pink outfit with blue and gold accents. She appears serene amidst a backdrop of magical clouds, with streaks of purples, blues, and stars in the sky, creating a mystical and tranquil atmosphere.</div>
         </div>
         <div class="prompt-wrap full-screen-wrap" style="position: relative;">
           <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/lcm_4step/an indoor setting focused on a middle-aged bald man wearing a black shirt and a brightly colored ti-4.mp4"></video>
-          <div class="prompt"></div>
+          <div class="prompt">A man sits at a desk set against a whiteboard filled with written content in a classroom, wearing a black shirt and an orange-striped tie. He is bald, with intense eyes, and his hands are clasped in front of him on papers. The room has rows of empty desks, framed pictures on the walls, and a clock above a door in the background.</div>
         </div>
       <div class="prompt-wrap full-screen-wrap" style="position: relative;">
         <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/lcm_4step/an outdoor photograph of a person with curly hair-smiling at the camera-The individual appears to b-4.mp4"></video>
-        <div class="prompt"></div>
+        <div class="prompt">A young man with curly hair and a slight smile stands on a city street wearing a dark blue hoodie. He has a small black backpack and is looking at the camera. Behind him, the blurred background shows city buildings and other passersby, adding to the urban ambiance.</div>
       </div>
     </div> 
-    </div>
 
-    <div class="spacer"></div>
-
-    <div class="container" style="max-width: 100%;">
-      <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%; margin-bottom: 0;">
+    <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%; margin-bottom: 0; margin-top: -30px">
         <div class="prompt-wrap full-screen-wrap" style="position: relative;">
           <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/lcm_4step/This image appears to be a photograph of a woman sitting against a two-tone gradient background-whic-4.mp4"></video>
-          <div class="prompt"></div>
+          <div class="prompt">A woman with long, straight, chestnut-brown hair, fair skin, and a subtle smile, wearing a dark outfit. She sits in front of a dual-toned background split vertically - one side is purple and the other side is pinkish-lavender. Her hair flows down her shoulders, and the background colors contrast with her hair and outfit, creating a visually appealing scene.</div>
         </div>
         <div class="prompt-wrap full-screen-wrap" style="position: relative;">
           <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/lcm_4step/This image features a portrait of an individual with a cheerful expression-The person has long-curly-4.mp4"></video>
-          <div class="prompt"></div>
+          <div class="prompt">A woman with long, flowing auburn hair is sitting in an office. She wears a sophisticated dark blazer. The background is a dual-toned, purple and blue gradient. Her warm smile showcases fair skin and flawless makeup.</div>
         </div>
       <div class="prompt-wrap full-screen-wrap" style="position: relative;">
-        <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/lcm_4step/an indoor setting focused on a middle-aged bald man wearing a black shirt and a brightly colored ti-4.mp4"></video>
-        <div class="prompt"></div>
+        <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/lcm_4step/This image presents a young woman with a joyful demeanor-standing in front of a window-Her dark hair-4.mp4"></video>
+        <div class="prompt">A young woman with neatly styled dark hair stands by a window, smiling at the camera. She wears a blue, button-down shirt and the natural light from the window highlights her joyful expression. The window behind her displays blurred figures and greenery, creating a softly focused backdrop.</div>
       </div>
     </div> 
     </div>
@@ -647,38 +669,34 @@
     <div class="spacer"></div>
 
     <div class="container" style="max-width: 100%;">
-      <h3 class="title is-4">Vanilla DMD2 (4-step)</h3> 
+      <h3 class="title is-4">Compared Method: Vanilla DMD2 (4-step)</h3> 
       <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%; margin-bottom: 0;">
         <div class="prompt-wrap full-screen-wrap" style="position: relative;">
           <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/dmd2_4step/an exquisite digital artwork featuring a young anime-style female character posed against a vibrant-4.mp4"></video>
-          <div class="prompt"></div>
+          <div class="prompt">A captivating artwork of a fantasy character against a dreamy sky. The character has flowing, wavy pink hair and blue eyes, adorned in an elegant pink outfit with blue and gold accents. She appears serene amidst a backdrop of magical clouds, with streaks of purples, blues, and stars in the sky, creating a mystical and tranquil atmosphere.</div>
         </div>
         <div class="prompt-wrap full-screen-wrap" style="position: relative;">
           <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/dmd2_4step/an indoor setting focused on a middle-aged bald man wearing a black shirt and a brightly colored ti-4.mp4"></video>
-          <div class="prompt"></div>
+          <div class="prompt">A man sits at a desk set against a whiteboard filled with written content in a classroom, wearing a black shirt and an orange-striped tie. He is bald, with intense eyes, and his hands are clasped in front of him on papers. The room has rows of empty desks, framed pictures on the walls, and a clock above a door in the background.</div>
         </div>
       <div class="prompt-wrap full-screen-wrap" style="position: relative;">
         <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/dmd2_4step/an outdoor photograph of a person with curly hair-smiling at the camera-The individual appears to b-4.mp4"></video>
-        <div class="prompt"></div>
+        <div class="prompt">A young man with curly hair and a slight smile stands on a city street wearing a dark blue hoodie. He has a small black backpack and is looking at the camera. Behind him, the blurred background shows city buildings and other passersby, adding to the urban ambiance.</div>
       </div>
     </div> 
-    </div>
 
-    <div class="spacer"></div>
-
-    <div class="container" style="max-width: 100%;">
-      <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%; margin-bottom: 0;">
+    <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%; margin-bottom: 0; margin-top: -30px">
         <div class="prompt-wrap full-screen-wrap" style="position: relative;">
           <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/dmd2_4step/This image appears to be a photograph of a woman sitting against a two-tone gradient background-whic-4.mp4"></video>
-          <div class="prompt"></div>
+          <div class="prompt">A woman with long, straight, chestnut-brown hair, fair skin, and a subtle smile, wearing a dark outfit. She sits in front of a dual-toned background split vertically - one side is purple and the other side is pinkish-lavender. Her hair flows down her shoulders, and the background colors contrast with her hair and outfit, creating a visually appealing scene.</div>
         </div>
         <div class="prompt-wrap full-screen-wrap" style="position: relative;">
           <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/dmd2_4step/This image features a portrait of an individual with a cheerful expression-The person has long-curly-4.mp4"></video>
-          <div class="prompt"></div>
+          <div class="prompt">A woman with long, flowing auburn hair is sitting in an office. She wears a sophisticated dark blazer. The background is a dual-toned, purple and blue gradient. Her warm smile showcases fair skin and flawless makeup.</div>
         </div>
       <div class="prompt-wrap full-screen-wrap" style="position: relative;">
-        <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/dmd2_4step/an indoor setting focused on a middle-aged bald man wearing a black shirt and a brightly colored ti-4.mp4"></video>
-        <div class="prompt"></div>
+        <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/dmd2_4step/This image presents a young woman with a joyful demeanor-standing in front of a window-Her dark hair-4.mp4"></video>
+        <div class="prompt">A young woman with neatly styled dark hair stands by a window, smiling at the camera. She wears a blue, button-down shirt and the natural light from the window highlights her joyful expression. The window behind her displays blurred figures and greenery, creating a softly focused backdrop.</div>
       </div>
     </div> 
     </div>
@@ -690,34 +708,30 @@
       <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%; margin-bottom: 0;">
         <div class="prompt-wrap full-screen-wrap" style="position: relative;">
           <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/w2s_dmd_4step/an exquisite digital artwork featuring a young anime-style female character posed against a vibrant-1.mp4"></video>
-          <div class="prompt"></div>
+          <div class="prompt">A captivating artwork of a fantasy character against a dreamy sky. The character has flowing, wavy pink hair and blue eyes, adorned in an elegant pink outfit with blue and gold accents. She appears serene amidst a backdrop of magical clouds, with streaks of purples, blues, and stars in the sky, creating a mystical and tranquil atmosphere.</div>
         </div>
         <div class="prompt-wrap full-screen-wrap" style="position: relative;">
           <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/w2s_dmd_4step/an indoor setting focused on a middle-aged bald man wearing a black shirt and a brightly colored ti-2.mp4"></video>
-          <div class="prompt"></div>
+          <div class="prompt">A man sits at a desk set against a whiteboard filled with written content in a classroom, wearing a black shirt and an orange-striped tie. He is bald, with intense eyes, and his hands are clasped in front of him on papers. The room has rows of empty desks, framed pictures on the walls, and a clock above a door in the background.</div>
         </div>
       <div class="prompt-wrap full-screen-wrap" style="position: relative;">
         <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/w2s_dmd_4step/an outdoor photograph of a person with curly hair-smiling at the camera-The individual appears to b-3.mp4"></video>
-        <div class="prompt"></div>
+        <div class="prompt">A young man with curly hair and a slight smile stands on a city street wearing a dark blue hoodie. He has a small black backpack and is looking at the camera. Behind him, the blurred background shows city buildings and other passersby, adding to the urban ambiance.</div>
       </div>
     </div> 
-    </div>
 
-    <div class="spacer"></div>
-
-    <div class="container" style="max-width: 100%;">
-      <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%; margin-bottom: 0;">
+    <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%; margin-bottom: 0; margin-top: -30px">
         <div class="prompt-wrap full-screen-wrap" style="position: relative;">
           <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/w2s_dmd_4step/This image appears to be a photograph of a woman sitting against a two-tone gradient background-whic-3.mp4"></video>
-          <div class="prompt"></div>
+          <div class="prompt">A woman with long, straight, chestnut-brown hair, fair skin, and a subtle smile, wearing a dark outfit. She sits in front of a dual-toned background split vertically - one side is purple and the other side is pinkish-lavender. Her hair flows down her shoulders, and the background colors contrast with her hair and outfit, creating a visually appealing scene.</div>
         </div>
         <div class="prompt-wrap full-screen-wrap" style="position: relative;">
           <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/w2s_dmd_4step/This image features a portrait of an individual with a cheerful expression-The person has long-curly-2.mp4"></video>
-          <div class="prompt"></div>
+          <div class="prompt">A woman with long, flowing auburn hair is sitting in an office. She wears a sophisticated dark blazer. The background is a dual-toned, purple and blue gradient. Her warm smile showcases fair skin and flawless makeup.</div>
         </div>
       <div class="prompt-wrap full-screen-wrap" style="position: relative;">
-        <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/w2s_dmd_4step/an indoor setting focused on a middle-aged bald man wearing a black shirt and a brightly colored ti-2.mp4"></video>
-        <div class="prompt"></div>
+        <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="static/videos/distill/dmd_videos/mp4_vbench/w2s_dmd_4step/This image presents a young woman with a joyful demeanor-standing in front of a window-Her dark hair-3.mp4"></video>
+        <div class="prompt">A young woman with neatly styled dark hair stands by a window, smiling at the camera. She wears a blue, button-down shirt and the natural light from the window highlights her joyful expression. The window behind her displays blurred figures and greenery, creating a softly focused backdrop.</div>
       </div>
     </div> 
     </div>
@@ -725,280 +739,6 @@
   </div>
   </div>
 </section>
-<!--       
-
-      <div class="section-title has-text-centered">
-        <h2 class="title is-4"><i>W2S</i>VD (4-step)</h2>
-      </div>
-
-      <div class="mochi-container"> 
-        <div class="description-container">  
-          <p class="overview-description"></p>  
-        </div> 
-        <div class="video-wrapper">  
-            <video controls>  
-                <source src="static/videos/distill/dmd_videos/mp4_vbench/w2s_dmd_4step/an exquisite digital artwork featuring a young anime-style female character posed against a vibrant-1.mp4" type="video/mp4">   
-            </video>  
-        </div>  
-        <div class="video-wrapper">  
-          <video controls>  
-              <source src="static/videos/distill/dmd_videos/mp4_vbench/w2s_dmd_4step/an indoor setting focused on a middle-aged bald man wearing a black shirt and a brightly colored ti-2.mp4" type="video/mp4">   
-          </video>  
-      </div>
-      </div> 
-
-      <div class="mochi-container"> 
-        <div class="description-container">  
-          <p class="overview-description"></p>  
-        </div> 
-        <div class="video-wrapper">  
-            <video controls>  
-                <source src="static/videos/distill/dmd_videos/mp4_vbench/w2s_dmd_4step/an outdoor photograph of a person with curly hair-smiling at the camera-The individual appears to b-3.mp4" type="video/mp4">   
-            </video>  
-        </div>  
-        <div class="video-wrapper">  
-          <video controls>  
-              <source src="static/videos/distill/dmd_videos/mp4_vbench/w2s_dmd_4step/This image appears to be a photograph of a woman sitting against a two-tone gradient background-whic-3.mp4" type="video/mp4">   
-          </video>  
-      </div>
-      </div> 
-
-
-      <div class="mochi-container"> 
-        <div class="description-container">  
-          <p class="overview-description"></p>  
-        </div> 
-        <div class="video-wrapper">  
-            <video controls>  
-                <source src="static/videos/distill/dmd_videos/mp4_vbench/w2s_dmd_4step/This image features a portrait of an individual with a cheerful expression-The person has long-curly-2.mp4" type="video/mp4">   
-            </video>  
-        </div>  
-        <div class="video-wrapper">  
-          <video controls>  
-              <source src="static/videos/distill/dmd_videos/mp4_vbench/w2s_dmd_4step/This image presents a young woman with a joyful demeanor-standing in front of a window-Her dark hair-3.mp4" type="video/mp4">   
-          </video>  
-      </div>
-      </div> 
-
-      <div class="spacer"></div>
-      
-      <div class="section-title has-text-centered">
-        <h2 class="title is-4">Euler (1-step)</h2>
-      </div>
-
-      <div class="mochi-container"> 
-        <div class="description-container">  
-          <p class="overview-description"></p>  
-        </div> 
-        <div class="video-wrapper">  
-            <video controls>  
-                <source src="static/videos/distill/dmd_videos/mp4_vbench/standard_1step/an exquisite digital artwork featuring a young anime-style female character posed against a vibrant-4.mp4" type="video/mp4">   
-            </video>  
-        </div>  
-        <div class="video-wrapper">  
-          <video controls>  
-              <source src="static/videos/distill/dmd_videos/mp4_vbench/standard_1step/an indoor setting focused on a middle-aged bald man wearing a black shirt and a brightly colored ti-4.mp4" type="video/mp4">   
-          </video>  
-      </div>
-      </div> 
-
-      <div class="mochi-container"> 
-        <div class="description-container">  
-          <p class="overview-description"></p>  
-        </div> 
-        <div class="video-wrapper">  
-            <video controls>  
-                <source src="static/videos/distill/dmd_videos/mp4_vbench/standard_1step/an outdoor photograph of a person with curly hair-smiling at the camera-The individual appears to b-4.mp4" type="video/mp4">   
-            </video>  
-        </div>  
-        <div class="video-wrapper">  
-          <video controls>  
-              <source src="static/videos/distill/dmd_videos/mp4_vbench/standard_1step/This image appears to be a photograph of a woman sitting against a two-tone gradient background-whic-4.mp4" type="video/mp4">   
-          </video>  
-      </div>
-      </div> 
-
-
-      <div class="mochi-container"> 
-        <div class="description-container">  
-          <p class="overview-description"></p>  
-        </div> 
-        <div class="video-wrapper">  
-            <video controls>  
-                <source src="static/videos/distill/dmd_videos/mp4_vbench/standard_1step/This image features a portrait of an individual with a cheerful expression-The person has long-curly-4.mp4" type="video/mp4">   
-            </video>  
-        </div>  
-        <div class="video-wrapper">  
-          <video controls>  
-              <source src="static/videos/distill/dmd_videos/mp4_vbench/standard_1step/This image presents a young woman with a joyful demeanor-standing in front of a window-Her dark hair-4.mp4" type="video/mp4">   
-          </video>  
-      </div>
-      </div> 
-
-      <div class="spacer"></div>
-
-      <div class="section-title has-text-centered">
-        <h2 class="title is-4">LCM (1-step)</h2>
-      </div>
-
-      <div class="mochi-container"> 
-        <div class="description-container">  
-          <p class="overview-description"></p>  
-        </div> 
-        <div class="video-wrapper">  
-            <video controls>  
-                <source src="static/videos/distill/dmd_videos/mp4_vbench/lcm_1step/an exquisite digital artwork featuring a young anime-style female character posed against a vibrant-4.mp4" type="video/mp4">   
-            </video>  
-        </div>  
-        <div class="video-wrapper">  
-          <video controls>  
-              <source src="static/videos/distill/dmd_videos/mp4_vbench/lcm_1step/an indoor setting focused on a middle-aged bald man wearing a black shirt and a brightly colored ti-4.mp4" type="video/mp4">   
-          </video>  
-      </div>
-      </div> 
-
-      <div class="mochi-container"> 
-        <div class="description-container">  
-          <p class="overview-description"></p>  
-        </div> 
-        <div class="video-wrapper">  
-            <video controls>  
-                <source src="static/videos/distill/dmd_videos/mp4_vbench/lcm_1step/an outdoor photograph of a person with curly hair-smiling at the camera-The individual appears to b-4.mp4" type="video/mp4">   
-            </video>  
-        </div>  
-        <div class="video-wrapper">  
-          <video controls>  
-              <source src="static/videos/distill/dmd_videos/mp4_vbench/lcm_1step/This image appears to be a photograph of a woman sitting against a two-tone gradient background-whic-4.mp4" type="video/mp4">   
-          </video>  
-      </div>
-      </div> 
-
-
-      <div class="mochi-container"> 
-        <div class="description-container">  
-          <p class="overview-description"></p>  
-        </div> 
-        <div class="video-wrapper">  
-            <video controls>  
-                <source src="static/videos/distill/dmd_videos/mp4_vbench/lcm_1step/This image features a portrait of an individual with a cheerful expression-The person has long-curly-4.mp4" type="video/mp4">   
-            </video>  
-        </div>  
-        <div class="video-wrapper">  
-          <video controls>  
-              <source src="static/videos/distill/dmd_videos/mp4_vbench/lcm_1step/This image presents a young woman with a joyful demeanor-standing in front of a window-Her dark hair-4.mp4" type="video/mp4">   
-          </video>  
-      </div>
-      </div> 
-
-      <div class="spacer"></div>
-
-      <div class="section-title has-text-centered">
-        <h2 class="title is-4">vanilla DMD2 (1-step)</h2>
-      </div>
-
-      <div class="mochi-container"> 
-        <div class="description-container">  
-          <p class="overview-description"></p>  
-        </div> 
-        <div class="video-wrapper">  
-            <video controls>  
-                <source src="static/videos/distill/dmd_videos/mp4_vbench/dmd2_1step/an exquisite digital artwork featuring a young anime-style female character posed against a vibrant-4.mp4" type="video/mp4">   
-            </video>  
-        </div>  
-        <div class="video-wrapper">  
-          <video controls>  
-              <source src="static/videos/distill/dmd_videos/mp4_vbench/dmd2_1step/an indoor setting focused on a middle-aged bald man wearing a black shirt and a brightly colored ti-4.mp4" type="video/mp4">   
-          </video>  
-      </div>
-      </div> 
-
-      <div class="mochi-container"> 
-        <div class="description-container">  
-          <p class="overview-description"></p>  
-        </div> 
-        <div class="video-wrapper">  
-            <video controls>  
-                <source src="static/videos/distill/dmd_videos/mp4_vbench/dmd2_1step/an outdoor photograph of a person with curly hair-smiling at the camera-The individual appears to b-4.mp4" type="video/mp4">   
-            </video>  
-        </div>  
-        <div class="video-wrapper">  
-          <video controls>  
-              <source src="static/videos/distill/dmd_videos/mp4_vbench/dmd2_1step/This image appears to be a photograph of a woman sitting against a two-tone gradient background-whic-4.mp4" type="video/mp4">   
-          </video>  
-      </div>
-      </div> 
-
-
-      <div class="mochi-container"> 
-        <div class="description-container">  
-          <p class="overview-description"></p>  
-        </div> 
-        <div class="video-wrapper">  
-            <video controls>  
-                <source src="static/videos/distill/dmd_videos/mp4_vbench/dmd2_1step/This image features a portrait of an individual with a cheerful expression-The person has long-curly-4.mp4" type="video/mp4">   
-            </video>  
-        </div>  
-        <div class="video-wrapper">  
-          <video controls>  
-              <source src="static/videos/distill/dmd_videos/mp4_vbench/dmd2_1step/This image presents a young woman with a joyful demeanor-standing in front of a window-Her dark hair-4.mp4" type="video/mp4">   
-          </video>  
-      </div>
-      </div> 
-
-      <div class="spacer"></div>
-
-      <div class="section-title has-text-centered">
-        <h2 class="title is-4"><i>W2S</i>VD (1-step)</h2>
-      </div>
-
-      <div class="mochi-container"> 
-        <div class="description-container">  
-          <p class="overview-description"></p>  
-        </div> 
-        <div class="video-wrapper">  
-            <video controls>  
-                <source src="static/videos/distill/dmd_videos/mp4_vbench/w2s_dmd_1step/an exquisite digital artwork featuring a young anime-style female character posed against a vibrant-4.mp4" type="video/mp4">   
-            </video>  
-        </div>  
-        <div class="video-wrapper">  
-          <video controls>  
-              <source src="static/videos/distill/dmd_videos/mp4_vbench/w2s_dmd_1step/an indoor setting focused on a middle-aged bald man wearing a black shirt and a brightly colored ti-4.mp4" type="video/mp4">   
-          </video>  
-      </div>
-      </div> 
-
-      <div class="mochi-container"> 
-        <div class="description-container">  
-          <p class="overview-description"></p>  
-        </div> 
-        <div class="video-wrapper">  
-            <video controls>  
-                <source src="static/videos/distill/dmd_videos/mp4_vbench/w2s_dmd_1step/an outdoor photograph of a person with curly hair-smiling at the camera-The individual appears to b-4.mp4" type="video/mp4">   
-            </video>  
-        </div>  
-        <div class="video-wrapper">  
-          <video controls>  
-              <source src="static/videos/distill/dmd_videos/mp4_vbench/w2s_dmd_1step/This image appears to be a photograph of a woman sitting against a two-tone gradient background-whic-4.mp4" type="video/mp4">   
-          </video>  
-      </div>
-      </div> 
-
-
-      <div class="mochi-container"> 
-        <div class="description-container">  
-          <p class="overview-description"></p>  
-        </div> 
-        <div class="video-wrapper">  
-            <video controls>  
-                <source src="static/videos/distill/dmd_videos/mp4_vbench/w2s_dmd_1step/This image features a portrait of an individual with a cheerful expression-The person has long-curly-4.mp4" type="video/mp4">   
-            </video>  
-        </div>  
-        <div class="video-wrapper">  
-          <video controls>  
-              <source src="static/videos/distill/dmd_videos/mp4_vbench/w2s_dmd_1step/This image presents a young woman with a joyful demeanor-standing in front of a window-Her dark hair-4.mp4" type="video/mp4">   
-          </video>  
-      </div>
-      </div>  -->
 
 
   <section class="section" style="margin-top: 10rem;">
@@ -1021,7 +761,7 @@
             </div>
           </div>    
 
-          <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%; margin-bottom: 0;">
+          <div style="display: flex; height: 36.33vh; justify-content: center; width: 100%; margin-bottom: 0;">
             <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
                 <div class="loading-placeholder">
                     <div class="loading-text">Loading...</div>
@@ -1091,17 +831,17 @@
     </div>
   </section>
 
-<!-- <section class="section" id="BibTeX">
+<section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{magic1for12025,
-  author    = {Yi, Hongwei and Shao, Shitong and Ye, Tian and Zhao, Jiantong and Yin, Qingyu  and Lingelbach, Michael and Yuan, Li and Tian, Yonghong and Xie, Enze and Zhou, Daquan},
-  title     = {Magic 1-For-1: Generating One Minute Video Clips within One Minute},
-  journal   = {arXiv},
-  year      = {2025},
-}</code></pre>
+    <pre><code>@article{shao2025magicdistillation,
+      title={MagicDistillation: Weak-to-Strong Video Distillation for Large-Scale Few-Step Synthesis},
+      author={Shao, Shitong and Yi, Hongwei and Guo, Hanzhong and Ye, Tian and Zhou, Daquan and Lingelbach, Michael and Xu, Zhiqiang and Xie, Zeke},
+      journal={arXiv preprint arXiv:2503.13319},
+      year={2025}
+    }</code></pre>
   </div>
-</section> -->
+</section>
 
 
 </body>
