@@ -350,7 +350,7 @@
       <span class="author-block" style="background: transparent !important; color: white;"><sup style="color: white;">2</sup>Hedra Inc.</span>
       <span class="author-block" style="background: transparent !important; color: white;"><sup style="color: white;">3</sup>HKU</span>
       <span class="author-block" style="background: transparent !important; color: white;"><sup style="color: white;">4</sup>Peking University</span>
-      <span class="author-block" style="background: transparent !important; color: white;"><sup style="color: white;">4</sup>MBZUAI</span>
+      <span class="author-block" style="background: transparent !important; color: white;"><sup style="color: white;">5</sup>MBZUAI</span>
     </div>
   </div>
 </section>
@@ -741,86 +741,89 @@
 </section>
 
 
-  <section class="section" style="margin-top: 10rem;">
-        <!-- <div class="flex flex-dynamic" style="display: flex; flex-wrap: wrap;"> -->
-        <div class="container is-max-desktop" style="display: flex; flex-wrap: wrap; width: 100%;">
-          <div class="section-title has-text-centered">
-            <h2 class="title is-3">Comparison between Magic141, MagicDistillation, HunyuanVideo-I2V (13B) and WanX-I2V (14B)</h2>
-          </div>
-      
-          <div class="spacer"></div>
-      
-          <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%; margin-bottom: 0;">
-            <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
-                <div class="loading-placeholder">
-                    <div class="loading-text">Loading...</div>
-                    <div class="loading-icon">☕</div>
-                </div>
-                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/comparison/0001.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
-                <div class="prompt"></div>
-            </div>
-          </div>    
+<section class="section" style="margin-top: 10rem;">
+  <div class="container is-max-desktop" style="width: 100%;">
+    <div class="section-title has-text-centered">
+      <h2 class="title is-3">Comparison between Magic141, MagicDistillation, HunyuanVideo-I2V (13B) and WanX-I2V (14B)</h2>
+    </div>
 
-          <div style="display: flex; height: 36.33vh; justify-content: center; width: 100%; margin-bottom: 0;">
-            <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
-                <div class="loading-placeholder">
-                    <div class="loading-text">Loading...</div>
-                    <div class="loading-icon">☕</div>
-                </div>
-                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/comparison/0002.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
-                <div class="prompt"></div>
-            </div>
-          </div>   
+    <div class="spacer"></div>
 
-          <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%; margin-bottom: 0;">
-            <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
-                <div class="loading-placeholder">
-                    <div class="loading-text">Loading...</div>
-                    <div class="loading-icon">☕</div>
-                </div>
-                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/comparison/0003.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
-                <div class="prompt"></div>
-            </div>
-          </div>  
-
-          <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%; margin-bottom: 0;">
-            <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
-                <div class="loading-placeholder">
-                    <div class="loading-text">Loading...</div>
-                    <div class="loading-icon">☕</div>
-                </div>
-                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/comparison/0006.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
-                <div class="prompt"></div>
-            </div>
-          </div>  
+    <!-- 统一视频容器结构 -->
+    <div style="display: flex; height: 33.33vh; width: 100%; margin-bottom: 2rem;">
+      <div class="video-container" style="flex: 1; position: relative; display: flex; justify-content: center; align-items: center;">
+        <div class="loading-placeholder" style="position: absolute;">
+          <div class="loading-text">Loading...</div>
+          <div class="loading-icon">☕</div>
+        </div>
+        <video autoplay playsinline muted loop 
+               style="width: 100%; height: 100%; object-fit: contain;"
+               onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';"
+               src="./static/videos/comparison/0001.mp4">
+        </video>
       </div>
-    </section>
+    </div>
+
+    <div style="display: flex; height: 33.33vh; width: 100%; margin-bottom: 2rem;">
+      <div class="video-container" style="flex: 1; position: relative; display: flex; justify-content: center; align-items: center;">
+        <div class="loading-placeholder" style="position: absolute;">
+          <div class="loading-text">Loading...</div>
+          <div class="loading-icon">☕</div>
+        </div>
+        <video autoplay playsinline muted loop 
+               style="width: 100%; height: 100%; object-fit: contain;"
+               onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';"
+               src="./static/videos/comparison/0002.mp4">
+        </video>
+      </div>
+    </div>
+
+    <div style="display: flex; height: 33.33vh; width: 100%; margin-bottom: 2rem;">
+      <div class="video-container" style="flex: 1; position: relative; display: flex; justify-content: center; align-items: center;">
+        <div class="loading-placeholder" style="position: absolute;">
+          <div class="loading-text">Loading...</div>
+          <div class="loading-icon">☕</div>
+        </div>
+        <video autoplay playsinline muted loop 
+               style="width: 100%; height: 100%; object-fit: contain;"
+               onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';"
+               src="./static/videos/comparison/0003.mp4">
+        </video>
+      </div>
+    </div>
+
+    <div style="display: flex; height: 33.33vh; width: 100%; margin-bottom: 2rem;">
+      <div class="video-container" style="flex: 1; position: relative; display: flex; justify-content: center; align-items: center;">
+        <div class="loading-placeholder" style="position: absolute;">
+          <div class="loading-text">Loading...</div>
+          <div class="loading-icon">☕</div>
+        </div>
+        <video autoplay playsinline muted loop 
+               style="width: 100%; height: 100%; object-fit: contain;"
+               onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';"
+               src="./static/videos/comparison/0006.mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
       
-  <section class="hero is-small">
+<section class="hero is-small">
 
   <div class="hero-body">
-      <!-- <div class="container"> -->
-      <div class="container is-max-desktop"  style="margin-top:5px;">
-
-        <div class="section-title has-text-centered">
-          <h2 class="title is-4">Frame by Frame Visualization</h2>
-        </div>
-        
-        <div class="item pd-image">
-          <img src="./static/images/visualization.jpg" width="100%" />
-        </div>
-           
-        <p class="text-with-margin" style="font-size:18px;">Visualization of MagicDistillation, vanilla DMD2, LCM, and the standard Euler sampling. In both 1-step and 4-step scenarios, MagicDistillation visibly outperforms other methods in terms of visual quality and facial motion dynamics.</p>
-      
-      </div>
 
       <div class="container is-max-desktop"  style="margin-top:5px;">
 
         <div class="section-title has-text-centered">
           <h2 class="title is-4">Quantitive Evaluations</h2>
         </div>
+
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+        <div class="spacer"></div>
         
-        <div class="item pd-image">
+        <div class="item pd-image" style="margin-top:15px;">
           <img src="./static/images/exp_1.jpg" width="100%" />
         </div>
         <div class="item pd-image">
